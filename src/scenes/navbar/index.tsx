@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo.png";
+import { nav } from "framer-motion/client";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const flexBetween = "flex items-center justify-between";
+  const flexBetween = "flex items-center justify-between bg-black";
 
-  return <div>Navbar</div>;
+  return (
+    <nav>
+    </nav>
+  );
 };
 
 export default Navbar;
