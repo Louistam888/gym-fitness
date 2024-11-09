@@ -1,6 +1,7 @@
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
+import HomePageText from "@/assets//HomePageText.png";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void };
 
