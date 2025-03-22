@@ -81,6 +81,36 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                     "Max Length is 100 characters."}
                 </p>
               )}
+              <input
+                type="text"
+                className={inputStyles}
+                placeholder="EMAIL"
+                {...register("email", {
+                  required: true,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
+              />
+              {errors.email && (
+                <p className="mt-1 text-primary-500">
+                  {errors.email.type === "required" &&
+                    "This filed is required."}
+                  {errors.email.type === "pattern" && "Invalid email address"}
+                </p>
+              )}
+              <input
+                type="text"
+                className={inputStyles}
+                placeholder="MESSAGE"
+                {...(register("message"), { required: true, maxLength: 2000 })}
+              />
+              {errors.message && (
+                <p className="mt-1 text-primary-500">
+                  {errors.message.type === "required" &&
+                    "This filed is required."}
+                  {errors.message.type === "maxLength" &&
+                    "Max Length is 2000 characters."}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
