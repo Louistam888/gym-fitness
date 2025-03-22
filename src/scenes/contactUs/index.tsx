@@ -8,7 +8,7 @@ import { p } from "framer-motion/client";
 type Props = { setSelectedPage: (value: SelectedPage) => void };
 
 const ContactUs = ({ setSelectedPage }: Props) => {
-  const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
+  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
   const {
     register,
     trigger,
@@ -66,6 +66,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               target="_blank"
               onSubmit={onSubmit}
               method="POST"
+              //TODO replace with formsubmit token in production
               action="https://formsubmit.co/testemail@gmail.com"
             >
               <div className="flex flex-col gap-2">
@@ -123,6 +124,25 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 </button>
               </div>
             </form>
+          </motion.div>
+          <motion.div
+            className="relative mt-16basiss-2/5 md:mt-0"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
+            <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+              <img
+                className="w-full"
+                alt="contact-us-page-graphic"
+                src={ContactUsPageGraphic}
+              />
+            </div>
           </motion.div>
         </div>
       </motion.div>
