@@ -71,7 +71,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
               corporis corrupti error nemo voluptas tempora, quis reprehenderit
               iste temporibus minus possimus exercitationem soluta neque
-              deserunt ratione ducimus laborum quaerat sequi!
+              deserunt ratione ducimus laborum quaerat!
             </p>
           </div>
         </motion.div>
