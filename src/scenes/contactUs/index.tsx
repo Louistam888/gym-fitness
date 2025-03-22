@@ -68,49 +68,60 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               method="POST"
               action="https://formsubmit.co/testemail@gmail.com"
             >
-              <input
-                type="text"
-                className={inputStyles}
-                placeholder="NAME"
-                {...(register("name"), { required: true, maxLength: 100 })}
-              />
-              {errors.name && (
-                <p className="mt-1 text-primary-500">
-                  {errors.name.type === "required" && "This filed is required."}
-                  {errors.name.type === "maxLength" &&
-                    "Max Length is 100 characters."}
-                </p>
-              )}
-              <input
-                type="text"
-                className={inputStyles}
-                placeholder="EMAIL"
-                {...register("email", {
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
-              />
-              {errors.email && (
-                <p className="mt-1 text-primary-500">
-                  {errors.email.type === "required" &&
-                    "This filed is required."}
-                  {errors.email.type === "pattern" && "Invalid email address"}
-                </p>
-              )}
-              <input
-                type="text"
-                className={inputStyles}
-                placeholder="MESSAGE"
-                {...(register("message"), { required: true, maxLength: 2000 })}
-              />
-              {errors.message && (
-                <p className="mt-1 text-primary-500">
-                  {errors.message.type === "required" &&
-                    "This filed is required."}
-                  {errors.message.type === "maxLength" &&
-                    "Max Length is 2000 characters."}
-                </p>
-              )}
+              <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  className={inputStyles}
+                  placeholder="NAME"
+                  {...(register("name"), { required: true, maxLength: 100 })}
+                />
+                {errors.name && (
+                  <p className="mt-1 text-primary-500">
+                    {errors.name.type === "required" &&
+                      "This filed is required."}
+                    {errors.name.type === "maxLength" &&
+                      "Max Length is 100 characters."}
+                  </p>
+                )}
+                <input
+                  type="text"
+                  className={inputStyles}
+                  placeholder="EMAIL"
+                  {...register("email", {
+                    required: true,
+                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  })}
+                />
+                {errors.email && (
+                  <p className="mt-1 text-primary-500">
+                    {errors.email.type === "required" &&
+                      "This filed is required."}
+                    {errors.email.type === "pattern" && "Invalid email address"}
+                  </p>
+                )}
+                <textarea
+                  rows={4}
+                  cols={50}
+                  className={inputStyles}
+                  placeholder="MESSAGE"
+                  {...(register("message"),
+                  { required: true, maxLength: 2000 })}
+                />
+                {errors.message && (
+                  <p className="mt-1 text-primary-500">
+                    {errors.message.type === "required" &&
+                      "This filed is required."}
+                    {errors.message.type === "maxLength" &&
+                      "Max Length is 2000 characters."}
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+                >
+                  SUBMIT
+                </button>
+              </div>
             </form>
           </motion.div>
         </div>
